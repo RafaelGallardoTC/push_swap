@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:02:51 by rgallard          #+#    #+#             */
-/*   Updated: 2022/07/08 13:38:25 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/08/10 18:28:25 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_isspace(int c)
 {
-	return ((9 <= c && c <= 13) || c == 32);
+	return ((c >= 9 && c <= 13) || c == 32);
 }
 
 /* The atoi() function converts the initial portion of the string
