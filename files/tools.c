@@ -6,26 +6,24 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:26:58 by rgallard          #+#    #+#             */
-/*   Updated: 2022/08/05 21:40:39 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/08/06 16:58:26 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	check_duplicates(int *nb_arr)
+int	check_duplicates(int *nb_arr, int len)
 {
 	int	i;
 	int	j;
 	int	*arr_1;
-	int	*arr_2;
 
 	i = 0;
 	arr_1 = nb_arr;
-	arr_2 = nb_arr;
-	while (arr_1[i])
+	while (i < len - 1)
 	{
 		j = i + 1;
-		while (arr_1[j])
+		while (j < len)
 		{
 			if (arr_1[i] == arr_1[j])
 				return (-1);
@@ -36,14 +34,29 @@ int	check_duplicates(int *nb_arr)
 	return (0);
 }
 
-void	char_to_int_array(char **src, int *dest)
+int	char_to_int_array(char **src, int *dest)
 {
 	int	i;
+	int	tmp;
 
 	i = 0;
+	if (!ft_all_numbers(src))
+		return (-1);
 	while (src[i])
 	{
-		dest[i] = ft_atoi(src[i]);
+		tmp = ft_atoi(src[i]);
+		if (tmp == 0 && src[i][0] != '0')
+			return (-1);
+		else if (tmp == -1)
+		{
+			if ((src[i][0] == '-') && (src[i][1] == '1') && !src[i][2])
+				dest[i] = tmp;
+			else
+				return (-1);
+		}
+		else
+			dest[i] = tmp;
 		i++;
 	}
+	return (0);
 }

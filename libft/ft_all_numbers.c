@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_all_numbers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/05 09:39:56 by rgallard         ###   ########.fr       */
+/*   Created: 2022/08/06 12:14:02 by rgallard          #+#    #+#             */
+/*   Updated: 2022/08/06 15:19:38 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdio.h>
+#include "libft.h"
 
-typedef struct s_stacks
+int	ft_all_numbers(char **nb_str)
 {
-	int	*stack_a;
-	int	*stack_b;
-	int	sa_len;
-	int	sb_len;
-}				t_stacks;
+	int		i;
+	int		j;
 
-int		check_duplicates(int *nb_arr, int len);
-int		char_to_int_array(char **src, int *dest);
-int		sa_ops(int *sa, int sa_len);
-int		sb_ops(int *sb, int sb_len);
-
-#endif
+	i = 0;
+	while (nb_str[i])
+	{
+		j = 0;
+		while (nb_str[i][j])
+		{
+			if (ft_isdigit(nb_str[i][j]) || (nb_str[i][j] == '-' &&
+				ft_isdigit(nb_str[i][j + 1])) || (nb_str[i][j] == '+' &&
+					ft_isdigit(nb_str[i][j + 1])))
+				j++;
+			else
+				return (0);
+		}
+		i++;
+	}
+	return (1);
+}

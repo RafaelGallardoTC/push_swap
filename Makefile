@@ -1,7 +1,7 @@
 NAME	= push_swap
 CC		= gcc
 LIBFT	= ./libft
-SRCS	= files/main.c files/tools.c \
+SRCS	= files/test_realloc.c files/tools.c files/stack_ops.c \
 
 OBJS	= $(SRCS:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra
@@ -19,7 +19,7 @@ unflag:
 			@${CC} files/main.c libft/*.c
 
 debug:
-			@${CC} ${FLAGS} main.c ft_*.c libft/*.c -g
+			@${CC} ${CFLAGS} ${SRCS} ./libft/libft.a -g
 
 clean:
 			@$(RM) $(OBJS)
