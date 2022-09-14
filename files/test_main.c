@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/05 09:59:11 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/09/14 20:14:01 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char **argv)
 	int			i;
 	int			len;
 	t_stacks	st;
+	t_list		*stack_a;
+	//t_list		*stack_b;
 
 	i = 1;
 	len = argc - 1;
@@ -32,14 +34,18 @@ int	main(int argc, char **argv)
 		printf("Error\n");
 		exit(-1);
 	}
+
+	stack_a = ft_lstnew(&len);
+	printf("------- %p -------", stack_a->content);
+	exit(0);
+
+
 	while (argv[i])
 	{
 		printf("%d		%s\n", st.stack_a[i - 1], argv[i]);
 		i++;
 	}
 	printf("-------- %d --------\n", len);
-	if (sa_ops(st.stack_a, len) == -1)
-		return (-1);
 	i = 0;
 	while (i < len)
 		printf("%d ", st.stack_a[i++]);
