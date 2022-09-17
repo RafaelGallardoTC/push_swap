@@ -44,7 +44,6 @@ int	ss_ops(t_stacks *st)
 */
 /*int	pa_ops(t_stacks *st)
 {
-<<<<<<< HEAD
 	 resize st->stack_a to have space for 1 item more.
 		move all items back and leave index 0 blank.
 	move st->stack_b[0] to st_stack_a[0].
@@ -53,11 +52,6 @@ int	ss_ops(t_stacks *st)
 }*/
 
 
-=======
-
-}*/
-
->>>>>>> 45a74e976553562497aaeed1ed568fc6eb877394
 /*
 pb (push b): Take the first element at the top of a and put it at the top of b.
 Do nothing if a is empty.

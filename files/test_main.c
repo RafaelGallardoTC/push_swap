@@ -6,11 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/09/14 20:14:01 by rgallard         ###   ########.fr       */
-=======
-/*   Updated: 2022/09/05 09:59:11 by rgallard         ###   ########.fr       */
->>>>>>> 45a74e976553562497aaeed1ed568fc6eb877394
+/*   Updated: 2022/09/17 18:32:48 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +17,8 @@ int	main(int argc, char **argv)
 	int			i;
 	int			len;
 	t_stacks	st;
-<<<<<<< HEAD
 	t_list		*stack_a;
 	//t_list		*stack_b;
-=======
->>>>>>> 45a74e976553562497aaeed1ed568fc6eb877394
 
 	i = 1;
 	len = argc - 1;
@@ -41,26 +34,18 @@ int	main(int argc, char **argv)
 		printf("Error\n");
 		exit(-1);
 	}
-<<<<<<< HEAD
 
 	stack_a = ft_lstnew(&len);
 	printf("------- %p -------", stack_a->content);
 	exit(0);
 
 
-=======
->>>>>>> 45a74e976553562497aaeed1ed568fc6eb877394
 	while (argv[i])
 	{
 		printf("%d		%s\n", st.stack_a[i - 1], argv[i]);
 		i++;
 	}
 	printf("-------- %d --------\n", len);
-<<<<<<< HEAD
-=======
-	if (sa_ops(st.stack_a, len) == -1)
-		return (-1);
->>>>>>> 45a74e976553562497aaeed1ed568fc6eb877394
 	i = 0;
 	while (i < len)
 		printf("%d ", st.stack_a[i++]);
