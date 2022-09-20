@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/17 18:32:48 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:15:16 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int	main(int argc, char **argv)
 	int			i;
 	int			len;
 	t_stacks	st;
-	t_list		*stack_a;
-	//t_list		*stack_b;
+	t_list		*head;
+	t_list		*second;
+	t_list		*third;
+	//t_list		stack_b;
 
 	i = 1;
 	len = argc - 1;
@@ -35,8 +37,12 @@ int	main(int argc, char **argv)
 		exit(-1);
 	}
 
-	stack_a = ft_lstnew(&len);
-	printf("------- %p -------", stack_a->content);
+	int *testing = &len;
+	head = ft_lstnew(testing);
+	second = ft_lstnew(&len);
+	third = ft_lstnew(&len);
+	printf("------- %d -------", head->content);
+	printf("------- %p -------", &len);
 	exit(0);
 
 

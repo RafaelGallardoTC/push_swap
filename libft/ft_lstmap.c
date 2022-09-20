@@ -6,14 +6,13 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 16:10:39 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/20 12:56:17 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:01:18 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-*	Iterates the list ’lst’ and applies the function ’f’ on the content
+/*	Iterates the list ’lst’ and applies the function ’f’ on the content
 * of each node. Creates a new list resulting of the successive applications
 * of the function ’f’. The ’del’ function is used to delete the content of
 * a node if needed.

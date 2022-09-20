@@ -9,7 +9,7 @@ RM		= rm -f
 HEADS	= libft.h
 
 $(NAME): $(OBJS)
-	@make bonus -C ${LIBFT}
+	@make -C ${LIBFT}
 	@${CC} ${OBJS} ${CFLAGS} ./libft/libft.a -o ${NAME}
 	@echo "Done!"
 
