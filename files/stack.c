@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_all_numbers.c                                   :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/06 12:14:02 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 21:45:34 by rgallard         ###   ########.fr       */
+/*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
+/*   Updated: 2022/10/03 19:08:34 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
-int	ft_all_numbers(char **nb_str)
+t_stack	*stack_new(int value)
 {
-	int		i;
-	int		j;
-	int		sign;
+	t_stack	*new;
 
-	i = 0;
-	sign = 0;
-	while (nb_str[i])
-	{
-		j = 0;
-		if (nb_str[i][j] == '-' || nb_str[i][j] == '+')
-			j++;
-		while (nb_str[i][j])
-		{
-			if (ft_isdigit(nb_str[i][j]))
-				j++;
-			else
-				return (0);
-		}
-		i++;
-	}
-	return (1);
+	new = malloc(sizeof * new);
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->index = 0;
+	new->pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
+	new->next = NULL;
+	return (new);
 }

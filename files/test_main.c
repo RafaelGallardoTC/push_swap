@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/17 18:32:48 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/03 19:21:10 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	main(int argc, char **argv)
 	}
 
 	stack_a = ft_lstnew(&len);
-	printf("------- %p -------", stack_a->content);
-	exit(0);
+	printf("------- %p -------\n", stack_a->content);
 
 
 	while (argv[i])

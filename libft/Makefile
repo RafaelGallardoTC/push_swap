@@ -35,9 +35,7 @@ SRCS	= ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
-
-BNSRCS = ft_lstnew.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -49,8 +47,6 @@ BNSRCS = ft_lstnew.c \
 
 
 OBJS	= $(SRCS:.c=.o)
-
-BNOBJS = $(BNSRCS:.c=.o)
 
 NAME	= libft.a
 
@@ -69,15 +65,10 @@ $(NAME):	$(OBJS)
 			ar rc $(NAME) $(OBJS)
 			ranlib $(NAME)
 
-bonus:		$(BNOBJS) $(OBJS)
-			ar rc $(NAME) $(BNOBJS)
-			ranlib $(NAME)
-
 all:		$(NAME)
 
 clean:
 			$(RM) $(OBJS)
-			$(RM) $(BNOBJS)
 
 fclean:		clean
 			$(RM) $(NAME)

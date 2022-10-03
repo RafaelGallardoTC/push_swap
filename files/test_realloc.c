@@ -4,35 +4,24 @@ int	main(int argc, char **argv)
 {
 	int			i;
 	int			len;
-	t_stacks	st;
+	t_stack		*stack_a;
 
 	i = 1;
 	len = argc - 1;
 	if (argc <= 1)
 		return (-1);
 	/* Creation of b_stack must be modified */
-	st.stack_a = (int *)malloc(len * sizeof(*st.stack_a));
-	st.stack_b = (int *)malloc(len * sizeof(*st.stack_b));
-	if (!st.stack_a || !st.stack_b)
-		return (-1);
-	if ((st.stack_b = ft_realloc(st.stack_b, len * (sizeof(*st.stack_b) + 4))) == NULL)
-	{
-		printf("Error 001\n");
-		exit(-1);
-	}
-	if (char_to_int_array(&argv[1], st.stack_a) == -1)
-	{
-		printf("Error\n");
-		exit(-1);
-	}
+	stack_a = stack_new(42);
+	stack_a->next = stack_new(64);
+
 
 	while (argv[i])
 	{
-		printf("sa: %d		input: %s		sb: %d\n", st.stack_a[i - 1], argv[i], st.stack_b[i]);
+		printf("stack_a: %d		input: %s		stack_a->next: %d\n", stack_a->value, argv[i], stack_a->next->value);
 		i++;
 	}
 
-	free(st.stack_a);
-	free(st.stack_b);
+	free(stack_a->next);
+	free(stack_a);
 	return (0);
 }

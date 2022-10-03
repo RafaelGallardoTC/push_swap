@@ -2,7 +2,7 @@
 
 /* sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements */
-int	sa_ops(int *sa, int sa_len)
+int	do_sa(int *sa, int sa_len)
 {
 	int	tmp;
 
@@ -16,7 +16,7 @@ int	sa_ops(int *sa, int sa_len)
 
 /* sb (swap b): Swap the first 2 elements at the top of stack b.
 Do nothing if there is only one or no elements. */
-int	sb_ops(int *sb, int sb_len)
+int	do_sb(int *sb, int sb_len)
 {
 	int	tmp;
 
@@ -29,11 +29,11 @@ int	sb_ops(int *sb, int sb_len)
 }
 
 /* ss : sa and sb at the same time. */
-int	ss_ops(t_stacks *st)
+int	do_ss(t_stacks *st)
 {
-	if (sa_ops(st->stack_a, st->sa_len) == -1)
+	if (do_sa(st->stack_a, st->sa_len) == -1)
 		return (-1);
-	if (sb_ops(st->stack_b, st->sb_len) == -1)
+	if (do_sb(st->stack_b, st->sb_len) == -1)
 		return (-1);
 	return (0);
 }

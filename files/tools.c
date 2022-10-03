@@ -6,12 +6,15 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:26:58 by rgallard          #+#    #+#             */
-/*   Updated: 2022/09/17 21:46:56 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:34:43 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*
+*	Checks for duplicate numbers in a given arrays of ints
+*/
 int	check_duplicates(int *nb_arr, int len)
 {
 	int	i;
@@ -34,6 +37,9 @@ int	check_duplicates(int *nb_arr, int len)
 	return (0);
 }
 
+/*
+*	Converts an array of char digits to an array of ints
+*/
 int	char_to_int_array(char **src, int *dest)
 {
 	int	i;
@@ -61,7 +67,7 @@ int	char_to_int_array(char **src, int *dest)
 	return (0);
 }
 
-/* is_sorted:
+/*
 *	Checks if a stack is sorted.
 *	Returns 0 if the stack is not sorted, 1 if it is sorted.
 */
@@ -80,6 +86,7 @@ int	is_sorted(t_stack *stack)
 *	Chooses a sorting method depending on the number
 *	of values to be sorted.
 */
+/*
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
@@ -88,4 +95,4 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		tiny_sort(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		sort(stack_a, stack_b);
-}
+}*/
