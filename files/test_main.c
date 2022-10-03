@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 19:21:10 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/03 22:06:00 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int	main(int argc, char **argv)
 	int			i;
 	int			len;
 	t_stacks	st;
-	t_list		*stack_a;
-	//t_list		*stack_b;
+	t_list		*head;
+	t_list		*second;
+	t_list		*third;
+	//t_list		stack_b;
 
 	i = 1;
 	len = argc - 1;
