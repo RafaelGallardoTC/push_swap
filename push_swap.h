@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/05 19:09:16 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/05 21:58:34 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int			do_sa(int *sa, int sa_len);
 int			do_sb(int *sb, int sb_len);
 int			is_sorted(t_stack *stack);
 t_stack		*stack_new(int value);
+void		stack_init(t_stack **st, int len);
+void		fill_stack(t_stack **st, int len, int *nb_arr);
 
 #endif
