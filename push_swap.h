@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 19:08:57 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/05 19:09:16 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ typedef struct s_stack
 
 }	t_stack;
 
-int			check_duplicates(int *nb_arr, int len);
+void		convert_arr(char ***src, int **dest);
+void		check_duplicates(int *nb_arr, int len);
 int			char_to_int_array(char **src, int *dest);
 int			do_sa(int *sa, int sa_len);
 int			do_sb(int *sb, int sb_len);

@@ -1,7 +1,8 @@
 NAME	= push_swap
 CC		= gcc
 LIBFT	= ./libft
-SRCS	= files/test_main.c files/tools.c files/stack.c files/stack_ops.c \
+SRCS	= files/test_main.c files/tools.c files/stack.c \
+		files/stack_ops.c files/error_tools.c \
 
 OBJS	= $(SRCS:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra

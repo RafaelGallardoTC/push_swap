@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:26:58 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 22:04:35 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:54:52 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 *	Checks for duplicate numbers in a given arrays of ints
 */
-int	check_duplicates(int *nb_arr, int len)
+void	check_duplicates(int *nb_arr, int len)
 {
 	int	i;
 	int	j;
@@ -29,12 +29,15 @@ int	check_duplicates(int *nb_arr, int len)
 		while (j < len)
 		{
 			if (arr_1[i] == arr_1[j])
-				return (-1);
+			{
+				printf("Duplicates are not allowed!!!\n");
+	// TODO:  Needs to free before exits. //
+				exit(-1);
+			}
 			j++;
 		}
 		i++;
 	}
-	return (0);
 }
 
 /*
