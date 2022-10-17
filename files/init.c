@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:22:46 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/05 22:05:45 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:31:43 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@ void	stack_init(t_stack **st, int len)
 
 void	fill_stack(t_stack **st, int len, int *nb_arr)
 {
-	int	i;
+	int		i;
+	t_stack	*tmp;
 
 	i = 0;
+	tmp = *st;
+	tmp->value = nb_arr[i++];
 	while (i < len)
 	{
-		(*st)->next = stack_new((nb_arr[i]));
-		i++;
-		printf("*** %d ***", (*st)->value);
+		tmp->next = stack_new((nb_arr[i++]));
+		printf("*** %d ***\n", tmp->value);
+		tmp = tmp->next;
 	}
+	printf("*** %d ***\n", tmp->value);
 }
