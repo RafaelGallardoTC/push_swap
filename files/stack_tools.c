@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_tools.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 19:08:34 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:54:22 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,31 @@ t_stack	*stack_new(int value)
 	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
+}
+
+/*
+**	Iterates through the list and swap the place of node a for node b.
+*/
+int	lst_swap_nodes(t_stack **st, int index_a, int index_b, int len)
+{
+	int		i;
+	t_stack	*tmp;
+	t_stack	*node_index_a;
+	t_stack	*node_index_b;
+
+	i = 0;
+	tmp = *st;
+	if ((index_a == index_b) || (index_a < 0) || (index_b < 0) ||
+		index_a >= len || index_b >= len || !st)
+		return (-1);
+	while (i < len)
+	{
+		if (i == index_a)
+			node_index_a = tmp;
+		else if (i == index_b)
+			node_index_b = tmp;
+		tmp = tmp->next;
+	}
+
+
 }

@@ -1,7 +1,7 @@
 NAME	= push_swap
 CC		= gcc
 LIBFT	= ./libft
-SRCS	= files/test_main.c files/tools.c files/stack.c \
+SRCS	= files/test_main.c files/tools.c files/stack_tools.c \
 		files/stack_ops.c files/error_tools.c files/init.c files/sort.c \
 
 OBJS	= $(SRCS:.c=.o)
