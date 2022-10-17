@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/17 17:54:22 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:35:04 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,16 @@ int	lst_swap_nodes(t_stack **st, int index_a, int index_b, int len)
 
 
 }
+
+
+/*
+
+	A	B	C	D	E	F	G
+	1	2	3	4	5	6	7
+
+	cambiando b x e
+	a.next(B) = d.next(E)
+	b.next(C) = e.next(F)
+	e.next(F) = b.next(C)
+
+*/
