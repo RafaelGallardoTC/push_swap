@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/19 14:21:57 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:09:45 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,49 +33,75 @@ t_stack	*stack_new(int value)
 **	Iterates through the list and swap the place of node a for node b.
 **	idx = index, idxa = index a.
 */
-int	lst_swap_nodes(t_stack **st, int index_a, int index_b, int len)
+int	lst_swap_nodes(t_stack **st, int x, int y, int len)
 {
 	int		i;
 	t_stack	*tmp;
-	t_stack	*node_idxa;
-	t_stack	*node_idxb;
-	t_stack	*node_before_idxa;
-	t_stack	*node_before_idxb;
+	t_stack	*curr_x;
+	t_stack	*curr_y;
+	t_stack	*prev_x;
+	t_stack	*prev_y;
+
+	prev_x = NULL;
+	curr_x = *st;
+	prev_y = NULL;
+	curr_y = *st;
 
 	i = 0;
 	tmp = *st;
-	if (index_a == index_b || index_a < 0 || index_b < 0
-		|| index_a >= len || index_b >= len || !st)
+	if (x == y || x < 0 || y < 0
+		|| x >= len || y >= len || !st)
 		return (-1);
-	while (i < len)
+
+	while (i != x && i < len)
 	{
-		if (i == index_a - 1)
-			node_before_idxa = tmp;
-		else if (i == index_a)
-			node_idxa = tmp;
-		else if (i == index_b - 1)
-			node_before_idxb = tmp;
-		else if (i == index_b)
-			node_idxb = tmp;
+		prev_x = curr_x;
+		curr_x = curr_x->next;
+	}
+	i = 0;
+	while (i != y && i < len)
+	{
+		prev_y = curr_y;
+		curr_y = curr_y->next;
+	}
+	
+
+	/*while (i < len)
+	{
+		if (i == x - 1)
+			prev_x = tmp;
+		else if (i == x)
+			curr_x = tmp;
+		else if (i == y - 1)
+			prev_y = tmp;
+		else if (i == y)
+			curr_y = tmp;
 		tmp = tmp->next;
 		i++;
 	}
-	if (index_a != 0)
+	if (x != 0)
 	{
-		tmp = node_idxb->next;
-		node_before_idxa->next = node_idxb;
-		node_before_idxb->next = node_idxa;
-		node_idxb->next = node_idxa->next;
-		node_idxa->next = tmp;
+		tmp = curr_y->next;
+		prev_x->next = curr_y;
+		prev_y->next = curr_x;
+		curr_y->next = curr_x->next;
+		curr_x->next = tmp;
 	}
-	else if (index_a == 0)
+	else if (x == 0)
 	{
-		tmp = node_idxb->next;
-		node_before_idxb->next = node_idxa;
-		node_idxb = *st;
-		//node_idxb->next = node_idxa->next;
-		node_idxa->next = tmp;
+		tmp = curr_x->next;
+		curr_x->next = curr_y->next;
+		prev_y->next = curr_x;
+		curr_y->next = tmp;
+		*st = curr_y;
 	}
+	else if (x == 0 && y == 1)
+	{
+		tmp = curr_x;
+		*st = curr_y;
+		curr_x->next = curr_y->next;
+		curr_y->next = tmp;
+	}*/
 	return (1);
 }
 
