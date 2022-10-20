@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/20 22:09:45 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:38:06 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,9 @@ int	lst_swap_nodes(t_stack **st, int x, int y, int len)
 
 	i = 0;
 	tmp = *st;
-	if (x == y || x < 0 || y < 0
+	/*if (x == y || x < 0 || y < 0
 		|| x >= len || y >= len || !st)
-		return (-1);
-
+		return (-1);*/
 	while (i != x && i < len)
 	{
 		prev_x = curr_x;
@@ -64,7 +63,21 @@ int	lst_swap_nodes(t_stack **st, int x, int y, int len)
 		prev_y = curr_y;
 		curr_y = curr_y->next;
 	}
-	
+	if (curr_x == NULL || curr_y == NULL)
+		return (-1);
+	if (prev_x != NULL)
+		prev_x->next = curr_y;
+	else
+		*st = curr_y;
+	if (prev_y != NULL)
+		prev_y->next = curr_x;
+	else
+		*st = curr_x;
+	tmp = curr_y->next;
+	curr_y->next = curr_x->next;
+	curr_x->next = tmp;
+
+
 
 	/*while (i < len)
 	{
@@ -102,7 +115,7 @@ int	lst_swap_nodes(t_stack **st, int x, int y, int len)
 		curr_x->next = curr_y->next;
 		curr_y->next = tmp;
 	}*/
-	return (1);
+	return (0);
 }
 
 
