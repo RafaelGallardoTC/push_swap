@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 21:57:57 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/03 21:58:01 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:43:13 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 	/* Creation of b_stack must be modified */
 	stack_a = stack_new(42);
 	stack_a->next = stack_new(64);
-
 
 	while (argv[i])
 	{

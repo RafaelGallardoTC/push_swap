@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/25 13:34:21 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:15:14 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stacks
 
 typedef struct s_stack
 {
+	int				len;
 	int				value;
 	int				index;
 	int				pos;
@@ -50,8 +51,9 @@ typedef struct s_tmp_lst
 void		convert_arr(char ***src, int **dest);
 void		check_duplicates(int *nb_arr, int len);
 int			char_to_int_array(char **src, int *dest);
-int			do_sa(int *sa, int sa_len);
-int			do_sb(int *sb, int sb_len);
+int			do_sa(t_stack **stack_a, int sa_len);
+int			do_sb(t_stack **stack_b, int sb_len);
+int			do_ss(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len);
 int			is_sorted(t_stack *stack);
 t_stack		*stack_new(int value);
 void		stack_init(t_stack **st, int len);

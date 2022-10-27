@@ -1,39 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_ops.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
+/*   Updated: 2022/10/27 20:16:23 by rgallard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 /* sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements */
-int	do_sa(int *sa, int sa_len)
+int	do_sa(t_stack **stack_a, int sa_len)
 {
-	int	tmp;
-
-	if (sa_len < 2)
-		return (-1);
-	tmp = sa[0];
-	sa[0] = sa[1];
-	sa[1] = tmp;
-	return (0);
+	return (swap_nodes(stack_a, 0, 1, sa_len));
 }
 
 /* sb (swap b): Swap the first 2 elements at the top of stack b.
 Do nothing if there is only one or no elements. */
-int	do_sb(int *sb, int sb_len)
+int	do_sb(t_stack **stack_b, int sb_len)
 {
-	int	tmp;
-
-	if (sb_len < 2)
-		return (-1);
-	tmp = sb[0];
-	sb[0] = sb[1];
-	sb[1] = tmp;
-	return (0);
+	return (swap_nodes(stack_b, 0, 1, sb_len));
 }
 
 /* ss : sa and sb at the same time. */
-int	do_ss(t_stacks *st)
+int	do_ss(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len)
 {
-	if (do_sa(st->stack_a, st->sa_len) == -1)
+	if (do_sa(st_a, sa_len) == -1)
 		return (-1);
-	if (do_sb(st->stack_b, st->sb_len) == -1)
+	if (do_sb(st_b, sb_len) == -1)
 		return (-1);
 	return (0);
 }

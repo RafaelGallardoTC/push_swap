@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/25 13:27:35 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:15:41 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 	insertion_sort(st.stack_a, len);
 	stack_init(&st_1, len);
 	fill_stack(&st_1, len, st.stack_a);
-	swap_nodes(&st_1, 0, 4, len);
+	do_sa(&st_1, len);
+	do_sb(&st_1, len);
+	do_ss(&st_1, &st_1,len, len);
 	tmp = st_1;
 	while (argv[i])
 	{
