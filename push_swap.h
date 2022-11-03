@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/27 20:15:14 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/03 13:57:54 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int			char_to_int_array(char **src, int *dest);
 int			do_sa(t_stack **stack_a, int sa_len);
 int			do_sb(t_stack **stack_b, int sb_len);
 int			do_ss(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len);
+int			do_pa(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len);
+int			do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len);
 int			is_sorted(t_stack *stack);
 t_stack		*stack_new(int value);
 void		stack_init(t_stack **st, int len);

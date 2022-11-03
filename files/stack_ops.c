@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/27 21:44:03 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/03 14:14:27 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,45 @@ int	do_ss(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len)
 * pa (push a): Take the first element at the top of b and put it at the top of a.
 * Do nothing if b is empty.
 */
-int	do_pa(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len)
+int	do_pa(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 {
 	t_stack	*tmp;
+	t_stack	*tmp_st_b;
 
 	tmp = *st_a;
-	if (!st_a || !st_b || sa_len < 1 || !sb_len)
+	tmp_st_b = (*st_b)->next;
+	if (!st_a || !st_b || *sa_len < 1 || !*sb_len)
 		return (-1);
-	
-
+	*st_a = *st_b;
+	(*st_b)->next = tmp;
+	*sa_len += 1;
+	*st_b = tmp_st_b;
+	*sb_len -= 1;
+	return (0);
 }
+
+/*
+** pb (push b): Take the first element at the top of a and put it at the top of b
+** Do nothing if a is empty.
+*/
+int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
+{
+	t_stack	*tmp;
+	t_stack	*tmp_st_a;
+
+	tmp = *st_b;
+	tmp_st_a = (*st_a)->next;
+	if (!st_a || !st_b || *sb_len < 1 || !*sa_len)
+		return (-1);
+	*st_b = *st_a;
+	(*st_a)->next = tmp;
+	*sb_len += 1;
+	*st_a = tmp_st_a;
+	*sa_len -= 1;
+	return (0);
+}
+
+
 /*int	pa_ops(t_stacks *st)
 {
 	 resize st->stack_a to have space for 1 item more.
@@ -60,8 +89,6 @@ int	do_pa(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len)
 }*/
 
 /*
-pb (push b): Take the first element at the top of a and put it at the top of b.
-Do nothing if a is empty.
 ra (rotate a): Shift up all elements of stack a by 1.
 The first element becomes the last one.
 rb (rotate b): Shift up all elements of stack b by 1.
