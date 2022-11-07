@@ -3,6 +3,7 @@ CC		= gcc
 LIBFT	= ./libft
 SRCS	= files/test_main.c files/tools.c files/stack_tools.c \
 		files/stack_ops.c files/error_tools.c files/init.c files/sort.c \
+		files/stack_ops_01.c
 
 OBJS	= $(SRCS:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra

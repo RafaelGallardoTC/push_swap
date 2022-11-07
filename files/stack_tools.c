@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/25 13:38:01 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:25:24 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,16 @@ int	swap_nodes(t_stack **st, int x, int y, int len)
 	curr_y->next = curr_x->next;
 	curr_x->next = tmp;
 	return (0);
+}
+
+/*
+*	Returns the last node of the list.
+*/
+t_stack	*ft_last_node(t_stack *st)
+{
+	if (!st)
+		return (NULL);
+	while (st->next)
+		st = st->next;
+	return (st);
 }

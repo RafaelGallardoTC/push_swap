@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/03 14:14:27 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:47:25 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 	return (0);
 }
 
-
 /*int	pa_ops(t_stacks *st)
 {
 	 resize st->stack_a to have space for 1 item more.
@@ -87,10 +86,7 @@ int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 	resize and delete st->stack_b[0]
 
 }*/
-
 /*
-ra (rotate a): Shift up all elements of stack a by 1.
-The first element becomes the last one.
 rb (rotate b): Shift up all elements of stack b by 1.
 The first element becomes the last one.
 rr : ra and rb at the same time.
