@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:08:18 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/07 19:25:24 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:16:11 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,19 @@ t_stack	*ft_last_node(t_stack *st)
 	if (!st)
 		return (NULL);
 	while (st->next)
+		st = st->next;
+	return (st);
+}
+
+/*
+*	Returns the one before last node of the list.
+* Ej: in the linked list: 0 1 2 3 4 it returns the node 3
+*/
+t_stack	*ft_before_last_node(t_stack *st)
+{
+	if (!st)
+		return (NULL);
+	while (st->next->next)
 		st = st->next;
 	return (st);
 }

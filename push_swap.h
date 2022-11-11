@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/11 11:29:52 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:27:36 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ int			do_ss(t_stack **st_a, t_stack **st_b, int sa_len, int sb_len);
 int			do_pa(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len);
 int			do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len);
 void		do_ra(t_stack **st);
+void		do_rb(t_stack **st);
+void		do_rr(t_stack **st_a, t_stack **st_b);
+void		do_rra(t_stack **st);
 int			is_sorted(t_stack *stack);
 t_stack		*stack_new(int value);
 void		stack_init(t_stack **st, int len);
@@ -64,5 +67,6 @@ void		fill_stack(t_stack **st, int len, int *nb_arr);
 void		insertion_sort(int *arr, int size);
 int			swap_nodes(t_stack **st, int index_a, int index_b, int len);
 t_stack		*ft_last_node(t_stack *st);
+t_stack		*ft_before_last_node(t_stack *st);
 
 #endif

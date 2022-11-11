@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/07 18:47:25 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/11 13:10:05 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,4 @@ int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 	resize and delete st->stack_b[0]
 
 }*/
-/*
-rb (rotate b): Shift up all elements of stack b by 1.
-The first element becomes the last one.
-rr : ra and rb at the same time.
-rra (reverse rotate a): Shift down all elements of stack a by 1.
-The last element becomes the first one.
-rrb (reverse rotate b): Shift down all elements of stack b by 1.
-The last element becomes the first one.
-rrr : rra and rrb at the same time.
 
-*/
