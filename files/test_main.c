@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/15 19:23:37 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/15 23:37:11 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 int	main(int argc, char **argv)
 {
 	int			list_b[5] = {11, 13, 15, 17, 21};
+	//int			list_b[0];
 	int			i;
 	int			len;
 	int			len_b;
@@ -41,21 +42,27 @@ int	main(int argc, char **argv)
 	/*	stack B TEMP	*/
 	stack_init(&stack_b, len_b);
 	fill_stack(&stack_b, len_b, list_b);
-	//do_pa(&stack_a, &stack_b, &len, &len_b);
+	//do_ss(&stack_a, &stack_b, len, len_b);
+	//do_pb(&stack_a, &stack_b, &len, &len_b);
 	//do_ra(&stack_a);
-	do_rra(&stack_a);
+	//do_rra(&stack_a);
+	do_rrr(&stack_a, &stack_b);
 	/* ****************	*/
 	tmp = stack_a;
 	tmp_b = stack_b;
 	while (argv[i] && tmp)
 	{
 		if (i == 1)
-		printf("Sorted Arr of int:		Arguments:		stack_a.value		stack_b.value\n");
-		printf("%d				%s			", st.stack_a[i - 1], argv[i]);
-		printf("%d			%d\n", tmp->value, tmp_b->value);
+			printf("Arguments:		Sorted Arr of int:		stack_a.value		stack_b.value\n");
+		printf("%s				%d			", argv[i], st.stack_a[i - 1]);
+		if (tmp_b)
+		{
+			printf("%d			%d\n", tmp->value, tmp_b->value);
+			tmp_b = tmp_b->next;
+		}
+		else
+			printf("%d\n", tmp->value);
 		tmp = tmp->next;
-		if (tmp_b->next)
-			tmp_b = tmp->next;
 		i++;
 	}
 	printf("-------- %d --------\n", len);

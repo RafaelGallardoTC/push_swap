@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/11 13:10:05 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/15 23:05:56 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int	do_pa(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 */
 int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 {
-	t_stack	*tmp;
+	return (do_pa(st_b, st_a, sa_len, sb_len));
+	/*t_stack	*tmp;
 	t_stack	*tmp_st_a;
 
 	tmp = *st_b;
@@ -75,15 +76,6 @@ int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 	*sb_len += 1;
 	*st_a = tmp_st_a;
 	*sa_len -= 1;
-	return (0);
+	return (0);*/
 }
-
-/*int	pa_ops(t_stacks *st)
-{
-	 resize st->stack_a to have space for 1 item more.
-		move all items back and leave index 0 blank.
-	move st->stack_b[0] to st_stack_a[0].
-	resize and delete st->stack_b[0]
-
-}*/
 
