@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:47:04 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/11 14:26:07 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:59:31 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	do_rra(t_stack **st)
 	t_stack	*last_node;
 	t_stack	*to_be_last;
 
+	last_node = ft_last_node(*st);
 	to_be_last = ft_before_last_node(*st);
 	to_be_last->next = NULL;
-	last_node = ft_last_node(*st);
 	tmp = *st;
 	*st = last_node;
-	last_node->next = tmp->next;
+	(*st)->next = tmp;
 }
 
 

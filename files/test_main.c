@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/11 14:29:39 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:23:37 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,18 @@ int	main(int argc, char **argv)
 	fill_stack(&stack_b, len_b, list_b);
 	//do_pa(&stack_a, &stack_b, &len, &len_b);
 	//do_ra(&stack_a);
-	//do_rra(&stack_a);
+	do_rra(&stack_a);
 	/* ****************	*/
 	tmp = stack_a;
 	tmp_b = stack_b;
 	while (argv[i] && tmp)
 	{
-		printf("%d		%s		", st.stack_a[i - 1], argv[i]);
-		printf("%d		%d\n", tmp->value, stack_b->value);
+		if (i == 1)
+		printf("Sorted Arr of int:		Arguments:		stack_a.value		stack_b.value\n");
+		printf("%d				%s			", st.stack_a[i - 1], argv[i]);
+		printf("%d			%d\n", tmp->value, tmp_b->value);
 		tmp = tmp->next;
-		if (tmp_b)
+		if (tmp_b->next)
 			tmp_b = tmp->next;
 		i++;
 	}
