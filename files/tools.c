@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:26:58 by rgallard          #+#    #+#             */
-/*   Updated: 2022/10/05 18:54:52 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:28:14 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int	char_to_int_array(char **src, int *dest)
 *	Checks if a stack is sorted.
 *	Returns 0 if the stack is not sorted, 1 if it is sorted.
 */
-/*
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -85,7 +84,7 @@ int	is_sorted(t_stack *stack)
 	}
 	return (1);
 }
-*/
+
 /* push_swap:
 *	Chooses a sorting method depending on the number
 *	of values to be sorted.

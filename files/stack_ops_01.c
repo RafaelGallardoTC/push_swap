@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:47:04 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/15 23:23:23 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:36:26 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	do_rra(t_stack **st_a)
 	(*st_a)->next = tmp;
 }
 
-
 /*
 *	rrb (reverse rotate b): Shift down all elements of stack b by 1.
 * The last element becomes the first one.
@@ -73,8 +72,3 @@ void	do_rrb(t_stack **st_b)
 {
 	return (do_rra(st_b));
 }
-
-
-/*
-*	rrr : rra and rrb at the same time.
-*/

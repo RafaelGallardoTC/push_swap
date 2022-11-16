@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/15 23:37:11 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:38:11 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ int	main(int argc, char **argv)
 	/*	stack B TEMP	*/
 	stack_init(&stack_b, len_b);
 	fill_stack(&stack_b, len_b, list_b);
-	//do_ss(&stack_a, &stack_b, len, len_b);
-	//do_pb(&stack_a, &stack_b, &len, &len_b);
-	//do_ra(&stack_a);
-	//do_rra(&stack_a);
-	do_rrr(&stack_a, &stack_b);
 	/* ****************	*/
 	tmp = stack_a;
 	tmp_b = stack_b;
@@ -65,8 +60,13 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 		i++;
 	}
-	printf("-------- %d --------\n", len);
-	printf("SORTED LIST\n");
+	if (is_sorted(stack_a))
+	{
+		printf("-------- %d --------\n", len);
+		printf("SORTED LIST\n");
+	}
+	else
+		printf("NOT SORTED!!!\n");
 	i = 0;
 	while (i < len)
 		printf("%d ", st.stack_a[i++]);

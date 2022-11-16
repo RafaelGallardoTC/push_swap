@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/15 23:36:46 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:47:31 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ void		do_rra(t_stack **st_a);
 void		do_rrb(t_stack **st_b);
 void		do_rrr(t_stack **st_a, t_stack **st_b);
 int			is_sorted(t_stack *stack);
-t_stack		*stack_new(int value);
 void		stack_init(t_stack **st, int len);
 void		fill_stack(t_stack **st, int len, int *nb_arr);
 void		insertion_sort(int *arr, int size);
 int			swap_nodes(t_stack **st, int index_a, int index_b, int len);
+t_stack		*stack_new(int value);
 t_stack		*ft_last_node(t_stack *st);
 t_stack		*ft_before_last_node(t_stack *st);
 
