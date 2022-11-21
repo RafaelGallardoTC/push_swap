@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:20:30 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/16 13:47:31 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:07:56 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ typedef struct s_tmp_lst
 
 }	t_tmp_lst;
 
+typedef struct s_utils
+{
+	int	stack_a_len;
+	int	stack_b_len;
+	int	half_stack_a;
+	int	half_stack_b;
+
+}	t_utils;
+
 void		convert_arr(char ***src, int **dest);
 void		check_duplicates(int *nb_arr, int len);
 int			char_to_int_array(char **src, int *dest);
@@ -67,6 +76,7 @@ void		stack_init(t_stack **st, int len);
 void		fill_stack(t_stack **st, int len, int *nb_arr);
 void		insertion_sort(int *arr, int size);
 int			swap_nodes(t_stack **st, int index_a, int index_b, int len);
+int			sort(t_stack **stack_a, t_stack **stack_b, t_utils *st_utils);
 t_stack		*stack_new(int value);
 t_stack		*ft_last_node(t_stack *st);
 t_stack		*ft_before_last_node(t_stack *st);
