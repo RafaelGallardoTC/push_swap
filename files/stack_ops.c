@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:07:10 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/15 23:05:56 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/22 00:40:05 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	do_pa(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 */
 int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 {
-	return (do_pa(st_b, st_a, sa_len, sb_len));
-	/*t_stack	*tmp;
+	//return (do_pa(st_b, st_a, sa_len, sb_len));
+	t_stack	*tmp;
 	t_stack	*tmp_st_a;
 
 	tmp = *st_b;
@@ -76,6 +76,6 @@ int	do_pb(t_stack **st_a, t_stack **st_b, int *sa_len, int *sb_len)
 	*sb_len += 1;
 	*st_a = tmp_st_a;
 	*sa_len -= 1;
-	return (0);*/
+	return (0);
 }
 
