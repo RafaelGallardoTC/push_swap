@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 20:27:03 by rgallard          #+#    #+#             */
-/*   Updated: 2022/11/21 13:26:09 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/11/22 10:06:45 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,37 @@ int	main(int argc, char **argv)
 	/*	stack B TEMP	*/
 	stack_init(&stack_b, st_utils.stack_b_len);
 	fill_stack(&stack_b, st_utils.stack_b_len, list_b);
-	sort(&stack_a, &stack_b, &st_utils);
+	//sort(&stack_a, &stack_b, &st_utils);
 	//swap_nodes(&stack_a, 2, 4, st_utils.stack_a_len);
 	/* ****************	*/
 	tmp = stack_a;
 	tmp_b = stack_b;
-	while (argv[i] && tmp)
+	while (argv[i])
 	{
 		if (i == 1)
 			printf("Arguments:		Sorted Arr of int:		stack_a.value		stack_b.value\n");
-		printf("%s				%d			", argv[i], st.stack_a[i - 1]);
+		if (argv[i])
+			printf("%s				", argv[i]);
+		else
+			printf("				");
+		if (st.stack_a[i - 1])
+			printf("%d				", st.stack_a[i - 1]);
+		else
+			printf("				");
+		if (tmp)
+		{
+			printf("%d		", tmp->value);
+			tmp = tmp->next;
+		}
+		else
+			printf("				");
 		if (tmp_b)
 		{
-			printf("%d			%d\n", tmp->value, tmp_b->value);
+			printf("%d\n", tmp_b->value);
 			tmp_b = tmp_b->next;
 		}
 		else
-			printf("%d\n", tmp->value);
-		tmp = tmp->next;
+			printf("				");
 		i++;
 	}
 	if (is_sorted(stack_a))
